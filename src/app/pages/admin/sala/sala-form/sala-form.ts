@@ -12,6 +12,7 @@ import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
   templateUrl: './sala-form.html',
   styleUrl: './sala-form.css'
 })
+
 export class SalaFormComponent {
   private fb = inject(FormBuilder);
 

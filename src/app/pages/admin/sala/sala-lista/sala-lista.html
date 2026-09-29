@@ -18,8 +18,8 @@
           </tr>
         </thead>
         <tbody>
-         <!-- 
-          @for (item of (salas | async); track item.id) {
+         
+          @for (item of (sala | async); track item.id) {
           <tr>
             <td class="item-title">{{ item.nome }}</td>
             <td class="price">{{ item.preco | currency:'BRL':'symbol':'1.2-2' }}</td>
@@ -41,7 +41,7 @@
           } @empty {
           <tr><td colspan="3" class="empty-msg">Sem registros</td></tr>
           }
-          -->
+        
         </tbody>
       </table>
     </div>
