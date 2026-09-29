@@ -19,10 +19,11 @@ import { Observable, of } from 'rxjs';
 })
 export class SalaListaComponent {
 
-  salas: Observable<Sala> = this.salaService.listar;
   private salaService = inject(SalaService);
   private router = inject(Router);
   private route = inject(ActivatedRoute)
+
+  salas: Observable<Sala[]> = this.salaService.listar();
 
   novaSala(): void {
     this.router.navigate(['/salas/novo']);
@@ -32,7 +33,7 @@ export class SalaListaComponent {
     this.router.navigate(['/salas', id, 'editar']);
   }
 
-  excluir(id: number): void{
+  excluirr(id: number): void{
     if(confirm("Deseja excluir essa sala?")){
       this.salaService.excluir(id).subscribe({
         next: () => {
@@ -46,8 +47,4 @@ export class SalaListaComponent {
     }
   }
 
-  ngOnInit(): void {
-    const id = this.route.snapshot.params['id'];
-    this.sala = this.salaService.buscarSalaId(id);
-  }
 }
